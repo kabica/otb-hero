@@ -6,7 +6,7 @@ import PlayArrowIcon from '@mui/icons-material/PlayArrow'
 
 // ──────────── Custom Components ────────────
 import travel from '../../../public/travel.png'
-import Navbar from '../Navbar'
+import { Navbar } from '../Navbar'
 
 const fontLink = document.createElement('link')
 fontLink.rel = 'stylesheet'
@@ -229,7 +229,7 @@ const Hero: React.FC = () => {
 }
 
 // ── Page root ─────────────────────────────────────────────────────────────────
-export default function JadooLanding(): React.ReactElement {
+export default function Jadoo(): React.ReactElement {
   return (
     <Box>
       <Navbar />
