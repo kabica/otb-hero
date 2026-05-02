@@ -1,13 +1,33 @@
 // src/theme.ts
 import { createTheme } from "@mui/material/styles";
 
-// Extend palette for custom accent color (TypeScript support)
+// Extend Palette (you already had this)
 declare module "@mui/material/styles" {
   interface Palette {
     accent: Palette["primary"];
   }
   interface PaletteOptions {
     accent?: PaletteOptions["primary"];
+  }
+
+  // ← ADD THIS: Extend Typography
+  interface TypographyVariants {
+    creative: React.CSSProperties;
+    developer: React.CSSProperties;
+  }
+
+  // Also needed for the options
+  interface TypographyVariantsOptions {
+    creative?: React.CSSProperties;
+    developer?: React.CSSProperties;
+  }
+}
+
+// This is required for TypeScript to recognize the new variants
+declare module "@mui/material/Typography" {
+  interface TypographyPropsVariantOverrides {
+    creative: true;
+    developer: true;
   }
 }
 
@@ -16,10 +36,10 @@ export const lightTheme = createTheme({
     mode: "light",
     primary: { main: "#111111" },
     accent: {
-      main: "#ff7b00ff", // Nice blue accent (you can change this)
+      main: "#ff7b00ff",
     },
     background: {
-      default: "#f8f9fa", // Light off-white
+      default: "#f8f9fa",
       paper: "#ffffff",
     },
     text: {
@@ -47,7 +67,7 @@ export const lightTheme = createTheme({
       fontWeight: 600,
       lineHeight: 1,
       letterSpacing: "-0.06em",
-      color: "#666666", // Softer gray for "DEVELOPER"
+      color: "#666666",
     },
 
     h1: {
@@ -56,7 +76,6 @@ export const lightTheme = createTheme({
     },
     h5: {
       fontFamily: '"Space Grotesk", sans-serif',
-      // letterSpacing: "0.06em",
       fontWeight: 400,
     },
   },
