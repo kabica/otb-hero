@@ -37,7 +37,6 @@ export default function Navbar() {
                   variant="body2"
                   sx={{ fontWeight: 700 }}
                   color="secondary"
-                  ful
                 >
                   {item.label}
                 </Typography>
