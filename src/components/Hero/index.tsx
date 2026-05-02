@@ -16,12 +16,16 @@ document.head.appendChild(fontLink)
 
 const Squiggle: React.FC = () => {
   return (
-    <svg
+    <Box
+      component="svg"
       viewBox="0 0 120 14"
-      width="90%"
-      height="14"
       preserveAspectRatio="none"
-      style={{ display: 'block', marginTop: -6 }}
+      sx={{
+        display: 'block',
+        width: '2.35em',
+        height: '0.22em',
+        mt: '-0.08em',
+      }}
     >
       <path
         d="M2 10 Q18 2 36 10 Q54 18 72 10 Q90 2 108 10 Q114 12 118 9"
@@ -30,7 +34,7 @@ const Squiggle: React.FC = () => {
         fill="none"
         strokeLinecap="round"
       />
-    </svg>
+    </Box>
   )
 }
 
@@ -112,7 +116,7 @@ const Hero: React.FC = () => {
               sx={{
                 fontFamily: `'Volkhov', serif`,
                 fontWeight: 700,
-                fontSize: 'clamp(44px, 11vw, 84px)',
+                fontSize: 'clamp(40px, 11vw, 84px)',
                 letterSpacing: '-0.04em',
                 lineHeight: 1.05,
                 color: '#181E4B',
@@ -123,8 +127,10 @@ const Hero: React.FC = () => {
               <Box
                 component="span"
                 sx={{
-                  display: 'inline-block',
-                  whiteSpace: 'nowrap',
+                  display: 'inline-flex',
+                  flexDirection: 'column',
+                  alignItems: 'flex-start',
+                  width: 'fit-content',
                   verticalAlign: 'baseline',
                 }}
               >
