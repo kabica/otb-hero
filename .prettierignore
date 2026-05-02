@@ -1,0 +1,3 @@
+# Ignore formatting on files where you want manual spacing
+# src/components/Hero/index.tsx
+# src/**/*.tsx
