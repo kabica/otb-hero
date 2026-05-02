@@ -6,7 +6,7 @@ import PlayArrowIcon from '@mui/icons-material/PlayArrow'
 
 // ──────────── Custom Components ────────────
 import travel from '../../../public/travel.png'
-import Navbar from '../Navbar/index.tsx'
+import Navbar from '../NavBar'
 
 const fontLink = document.createElement('link')
 fontLink.rel = 'stylesheet'
