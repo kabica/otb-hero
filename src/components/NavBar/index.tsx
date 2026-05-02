@@ -26,7 +26,7 @@ const navItems = [
 ]
 
 // ──────────── Navbar Component ────────────
-export const Navbar: React.ReactElement = () => {
+export const Navbar: React.FC = () => {
   const muiTheme = useTheme()
   const isMobile = useMediaQuery(muiTheme.breakpoints.down('md'))
   const [drawerOpen, setDrawerOpen] = React.useState(false)
@@ -128,10 +128,10 @@ export const Navbar: React.ReactElement = () => {
               >
                 <ListItemText
                   primary={item.label}
-                  primaryTypographyProps={{
+                  sx={{
                     fontFamily: `'Poppins', sans-serif`,
                     fontWeight: 500,
-                    color: '#181E4B',
+                    color: '#DF6951',
                   }}
                 />
               </ListItem>
