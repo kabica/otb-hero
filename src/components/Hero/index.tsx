@@ -35,7 +35,7 @@ function Squiggle({ width }: { width: number }) {
 }
 
 // ── Hero ──────────────────────────────────────────────────────────────────────
-function Hero() {
+const Hero: React.FC = () => {
   const muiTheme = useTheme()
   const isMobile = useMediaQuery(muiTheme.breakpoints.down('md'))
   const isSmall = useMediaQuery(muiTheme.breakpoints.down('sm'))
@@ -236,7 +236,7 @@ function Hero() {
 }
 
 // ── Page root ─────────────────────────────────────────────────────────────────
-export default function JadooLanding() {
+export default function JadooLanding(): React.ReactElement {
   return (
     <Box>
       <Navbar />
