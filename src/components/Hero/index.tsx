@@ -6,7 +6,7 @@ import PlayArrowIcon from '@mui/icons-material/PlayArrow'
 
 // ──────────── Custom Components ────────────
 import travel from '../../../public/travel.png'
-import Navbar from '../NavBar'
+import Navbar from '../Navbar'
 
 const fontLink = document.createElement('link')
 fontLink.rel = 'stylesheet'
@@ -43,7 +43,7 @@ const Hero: React.FC = () => {
         minHeight: { xs: 'auto', md: 'calc(100vh - 80px)' },
         display: 'flex',
         alignItems: 'center',
-        overflow: 'hidden',
+        // overflow: 'hidden',
       }}
     >
       {/* ── Beige blob ── */}
@@ -91,26 +91,48 @@ const Hero: React.FC = () => {
               sx={{
                 fontFamily: `'Poppins', sans-serif`,
                 fontWeight: 700,
-                fontSize: 'clamp(5px, 5vw, 20px)',
-                letterSpacing: { xs: 2, md: 2.5 },
+                fontSize: 'clamp(12px, 2vw, 20px)',
+                letterSpacing: {
+                  xs: 1,
+                  md: 2,
+                },
                 color: '#DF6951',
                 textTransform: 'uppercase',
+
+                // allow wrapping
+                whiteSpace: 'normal',
+                wordBreak: 'break-word',
+                lineHeight: 1.4,
               }}
             >
               Best Destinations Around The World
             </Typography>
             <Typography
-              component="div"
+              component="h1"
               sx={{
                 fontFamily: `'Volkhov', serif`,
                 fontWeight: 700,
-                fontSize: 'clamp(64px, 5vw, 84px)',
-                lineHeight: '89px',
+                fontSize: 'clamp(30px, 9vw, 84px)',
+                letterSpacing: '-0.04em',
+                lineHeight: 1.1,
                 color: '#181E4B',
+
+                maxWidth: '100%',
+                minWidth: 0,
+                whiteSpace: 'normal',
+                overflowWrap: 'anywhere',
+                wordBreak: 'normal',
               }}
             >
               Travel,{' '}
-              <Box component="span" sx={{ display: 'inline-block' }}>
+              <Box
+                component="span"
+                sx={{
+                  display: 'inline-block',
+                  whiteSpace: 'nowrap',
+                  verticalAlign: 'baseline',
+                }}
+              >
                 enjoy
                 <Squiggle />
               </Box>{' '}
@@ -120,11 +142,17 @@ const Hero: React.FC = () => {
             <Typography
               sx={{
                 fontFamily: `'Poppins', sans-serif`,
-                fontSize: { xs: '0.88rem', md: '0.95rem' },
+                fontSize: 'clamp(14px, 2vw, 16px)',
                 color: '#5E6282',
-                lineHeight: 1.9,
-                maxWidth: { xs: '100%', md: 420 },
+                lineHeight: '30px',
                 textAlign: 'left',
+                // prevent super long unreadable lines
+                maxWidth: {
+                  xs: '100%',
+                  md: '500px',
+                },
+                whiteSpace: 'normal',
+                wordBreak: 'break-word',
               }}
             >
               Built Wicket longer admire do barton vanity itself do in it. Preferred to sportsmen it
