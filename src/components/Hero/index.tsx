@@ -1,6 +1,5 @@
 // ──────────── Static + Imports ────────────
 import * as React from 'react'
-
 import { Typography, Box, Button } from '@mui/material'
 import PlayArrowIcon from '@mui/icons-material/PlayArrow'
 
