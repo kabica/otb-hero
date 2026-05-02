@@ -26,7 +26,7 @@ const navItems = [
 ]
 
 // ──────────── Navbar Component ────────────
-export const Navbar: React.FC = () => {
+export default function Navbar(): React.ReactElement {
   const muiTheme = useTheme()
   const isMobile = useMediaQuery(muiTheme.breakpoints.down('md'))
   const [drawerOpen, setDrawerOpen] = React.useState(false)
