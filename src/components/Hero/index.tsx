@@ -18,7 +18,7 @@ const Squiggle: React.FC = () => {
   return (
     <svg
       viewBox="0 0 120 14"
-      width="100%"
+      width="90%"
       height="14"
       preserveAspectRatio="none"
       style={{ display: 'block', marginTop: -6 }}
@@ -34,7 +34,6 @@ const Squiggle: React.FC = () => {
   )
 }
 
-// ── Hero ──────────────────────────────────────────────────────────────────────
 const Hero: React.FC = () => {
   return (
     <Box
@@ -43,9 +42,9 @@ const Hero: React.FC = () => {
         minHeight: { xs: 'auto', md: 'calc(100vh - 80px)' },
         display: 'flex',
         alignItems: 'center',
+        overflow: 'hidden',
       }}
     >
-      {/* ── Beige blob ── */}
       <Box
         sx={{
           position: 'absolute',
@@ -59,7 +58,6 @@ const Hero: React.FC = () => {
         }}
       />
 
-      {/* ── Grid ── */}
       <Box
         sx={{
           position: 'relative',
@@ -71,41 +69,44 @@ const Hero: React.FC = () => {
           px: { xs: 3, sm: 5, md: 8, lg: 12 },
           py: { xs: 5, md: 0 },
           gap: { xs: 0, md: 2 },
+          overflow: 'hidden',
         }}
       >
-        <Box sx={{ order: { xs: 2, md: 1 }, pt: { xs: 3, md: 0 } }}>
-          {/* Headline */}
+        <Box
+          sx={{
+            order: { xs: 1, md: 1 },
+            pt: { xs: 3, md: 0 },
+            minWidth: 0,
+            maxWidth: '100%',
+          }}
+        >
           <Box
             sx={{
               mb: { xs: 2.5, md: 3 },
               display: 'flex',
               flexDirection: 'column',
               gap: { xs: 1.5, md: 2.5 },
-              // border: '1px solid red',
               textAlign: 'left',
+              minWidth: 0,
+              maxWidth: '100%',
             }}
           >
-            {/* Header */}
             <Typography
               sx={{
                 fontFamily: `'Poppins', sans-serif`,
                 fontWeight: 700,
                 fontSize: 'clamp(12px, 2vw, 20px)',
-                letterSpacing: {
-                  xs: 1,
-                  md: 2,
-                },
+                letterSpacing: { xs: 1, md: 2 },
                 color: '#DF6951',
                 textTransform: 'uppercase',
-
-                // allow wrapping
                 whiteSpace: 'normal',
-                wordBreak: 'break-word',
+                overflowWrap: 'break-word',
                 lineHeight: 1.4,
               }}
             >
               Best Destinations Around The World
             </Typography>
+
             <Typography
               component="h1"
               sx={{
@@ -115,12 +116,10 @@ const Hero: React.FC = () => {
                 letterSpacing: '-0.04em',
                 lineHeight: 1.1,
                 color: '#181E4B',
-
                 maxWidth: '100%',
                 minWidth: 0,
                 whiteSpace: 'normal',
-                overflowWrap: 'anywhere',
-                wordBreak: 'normal',
+                overflowWrap: 'break-word',
               }}
             >
               Travel,{' '}
@@ -137,33 +136,29 @@ const Hero: React.FC = () => {
               </Box>{' '}
               and live a full new life
             </Typography>
-            {/* Body Copy */}
+
             <Typography
               sx={{
                 fontFamily: `'Poppins', sans-serif`,
                 fontSize: 'clamp(14px, 2vw, 16px)',
                 color: '#5E6282',
-                lineHeight: '30px',
+                lineHeight: 1.7,
                 textAlign: 'left',
-                // prevent super long unreadable lines
-                maxWidth: {
-                  xs: '100%',
-                  md: '500px',
-                },
+                maxWidth: { xs: '100%', md: '500px' },
                 whiteSpace: 'normal',
-                wordBreak: 'break-word',
+                overflowWrap: 'break-word',
               }}
             >
               Built Wicket longer admire do barton vanity itself do in it. Preferred to sportsmen it
               engrossed listening. Park gate sell they west hard for the.
             </Typography>
 
-            {/* Footer */}
             <Box
               sx={{
                 display: 'flex',
+                flexWrap: 'wrap',
                 alignItems: 'center',
-                gap: { xs: 3, md: 4 },
+                gap: { xs: 2, md: 4 },
               }}
             >
               <Button
@@ -212,8 +207,15 @@ const Hero: React.FC = () => {
                     flexShrink: 0,
                   }}
                 >
-                  <PlayArrowIcon sx={{ color: '#fff', fontSize: { xs: 22, md: 26 }, ml: '3px' }} />
+                  <PlayArrowIcon
+                    sx={{
+                      color: '#fff',
+                      fontSize: { xs: 22, md: 26 },
+                      ml: '3px',
+                    }}
+                  />
                 </Box>
+
                 <Typography
                   sx={{
                     fontFamily: `'Poppins', sans-serif`,
@@ -231,11 +233,13 @@ const Hero: React.FC = () => {
 
         <Box
           sx={{
-            order: { xs: 2, md: 1 },
+            order: { xs: 2, md: 2 },
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'flex-end',
             py: { xs: 3, md: 0 },
+            minWidth: 0,
+            maxWidth: '100%',
           }}
         >
           <Box
@@ -243,7 +247,8 @@ const Hero: React.FC = () => {
             src={travel}
             alt="Traveller"
             sx={{
-              width: 'clamp(500px, 45vw, 540px)',
+              width: 'clamp(260px, 70vw, 540px)',
+              maxWidth: '100%',
               height: 'auto',
               objectFit: 'contain',
               display: 'block',
@@ -255,10 +260,9 @@ const Hero: React.FC = () => {
   )
 }
 
-// ── Page root ─────────────────────────────────────────────────────────────────
 export default function Jadoo(): React.ReactElement {
   return (
-    <Box>
+    <Box sx={{ minHeight: '100vh', bgcolor: '#fff', overflowX: 'hidden' }}>
       <Navbar />
       <Hero />
     </Box>
