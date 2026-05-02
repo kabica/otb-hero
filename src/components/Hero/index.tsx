@@ -1,5 +1,6 @@
 // ──────────── Static + Imports ────────────
 import * as React from 'react'
+
 import { Typography, Box, Button } from '@mui/material'
 import PlayArrowIcon from '@mui/icons-material/PlayArrow'
 
@@ -31,7 +32,7 @@ const Squiggle: React.FC = () => {
       />
     </svg>
   )
-}
+}g
 
 // ── Hero ──────────────────────────────────────────────────────────────────────
 const Hero: React.FC = () => {
@@ -42,7 +43,6 @@ const Hero: React.FC = () => {
         minHeight: { xs: 'auto', md: 'calc(100vh - 80px)' },
         display: 'flex',
         alignItems: 'center',
-        // overflow: 'hidden',
       }}
     >
       {/* ── Beige blob ── */}
