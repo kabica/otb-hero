@@ -112,14 +112,11 @@ const Hero: React.FC = () => {
               sx={{
                 fontFamily: `'Volkhov', serif`,
                 fontWeight: 700,
-                fontSize: 'clamp(30px, 9vw, 84px)',
+                fontSize: 'clamp(44px, 11vw, 84px)',
                 letterSpacing: '-0.04em',
-                lineHeight: 1.1,
+                lineHeight: 1.05,
                 color: '#181E4B',
                 maxWidth: '100%',
-                minWidth: 0,
-                whiteSpace: 'normal',
-                overflowWrap: 'break-word',
               }}
             >
               Travel,{' '}
@@ -133,8 +130,11 @@ const Hero: React.FC = () => {
               >
                 enjoy
                 <Squiggle />
-              </Box>{' '}
-              and live a full new life
+              </Box>
+              <br />
+              and live a new
+              <br />
+              and full life
             </Typography>
 
             <Typography
