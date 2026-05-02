@@ -31,9 +31,8 @@ export default function Hero() {
           color="text.secondary"
           sx={{ maxWidth: 500, mb: 6, fontSize: "1.1rem" }}
         >
-          Full-stack developer and hacker driven by a passion for building
-          efficient, secure applications. Expertise in web development, with a
-          focus on performance and security, pushing boundaries in code.
+          Full-stack developer and hacker extrordinaire. Jaaamm is my skinny
+          legend and I am a big fan of the color orange.
         </Typography>
 
         <Box sx={{ display: "flex", gap: 3 }}>
