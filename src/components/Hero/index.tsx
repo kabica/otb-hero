@@ -1,9 +1,8 @@
 // ──────────── Static + Imports ────────────
 import * as React from 'react'
 
-import { Typography, Box, Button, useMediaQuery } from '@mui/material'
+import { Typography, Box, Button } from '@mui/material'
 import PlayArrowIcon from '@mui/icons-material/PlayArrow'
-import { useTheme } from '@mui/material/styles'
 
 // ──────────── Custom Components ────────────
 import travel from '../../../public/travel.png'
@@ -15,16 +14,17 @@ fontLink.href =
   'https://fonts.googleapis.com/css2?family=Volkhov:wght@700&family=Poppins:wght@400;500;600;700&display=swap'
 document.head.appendChild(fontLink)
 
-function Squiggle({ width }: { width: number }) {
+const Squiggle: React.FC = () => {
   return (
     <svg
-      viewBox={`0 0 ${width} 14`}
-      width={width}
-      height={14}
+      viewBox="0 0 120 14"
+      width="100%"
+      height="14"
+      preserveAspectRatio="none"
       style={{ display: 'block', marginTop: -6 }}
     >
       <path
-        d={`M2 10 Q${width * 0.15} 2 ${width * 0.3} 10 Q${width * 0.45} 18 ${width * 0.6} 10 Q${width * 0.75} 2 ${width * 0.9} 10 Q${width * 0.95} 12 ${width - 2} 9`}
+        d="M2 10 Q18 2 36 10 Q54 18 72 10 Q90 2 108 10 Q114 12 118 9"
         stroke="#DF6951"
         strokeWidth="4"
         fill="none"
@@ -36,13 +36,6 @@ function Squiggle({ width }: { width: number }) {
 
 // ── Hero ──────────────────────────────────────────────────────────────────────
 const Hero: React.FC = () => {
-  const muiTheme = useTheme()
-  const isMobile = useMediaQuery(muiTheme.breakpoints.down('md'))
-  const isSmall = useMediaQuery(muiTheme.breakpoints.down('sm'))
-
-  // Squiggle width tracks headline font size roughly
-  const squiggleWidth = isSmall ? 160 : isMobile ? 200 : 280
-
   return (
     <Box
       sx={{
@@ -116,11 +109,11 @@ const Hero: React.FC = () => {
                 color: '#181E4B',
               }}
             >
-              Travel,{''}
+              Travel,{' '}
               <Box component="span" sx={{ display: 'inline-block' }}>
                 enjoy
-                <Squiggle width={squiggleWidth} />
-              </Box>
+                <Squiggle />
+              </Box>{' '}
               and live a full new life
             </Typography>
             {/* Body Copy */}

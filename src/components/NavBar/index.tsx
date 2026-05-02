@@ -25,7 +25,8 @@ const navItems = [
   { label: 'Bookings', href: '#bookings' },
 ]
 
-export default function Navbar() {
+// ──────────── Navbar Component ────────────
+export default function Navbar(): React.ReactElement {
   const muiTheme = useTheme()
   const isMobile = useMediaQuery(muiTheme.breakpoints.down('md'))
   const [drawerOpen, setDrawerOpen] = React.useState(false)
