@@ -1,30 +1,12 @@
 // ──────────── Static + Imports ────────────
 import * as React from 'react'
 
-import { createTheme, ThemeProvider, useTheme } from '@mui/material/styles'
+import { Typography, Box, Button, useMediaQuery } from '@mui/material'
 import PlayArrowIcon from '@mui/icons-material/PlayArrow'
-import MenuIcon from '@mui/icons-material/Menu'
-import {
-  AppBar,
-  Toolbar,
-  Typography,
-  Box,
-  Button,
-  Link,
-  IconButton,
-  Drawer,
-  List,
-  ListItem,
-  ListItemText,
-  useMediaQuery,
-} from '@mui/material'
+import { useTheme } from '@mui/material/styles'
 
 // ──────────── Custom Components ────────────
-import airplaneImg from '../../../public/airplane.png'
-import traveller from '../../../public/traveller.png'
 import travel from '../../../public/travel.png'
-
-import { jadooTheme } from '../../theme'
 import Navbar from '../Navbar'
 
 const fontLink = document.createElement('link')
@@ -32,11 +14,6 @@ fontLink.rel = 'stylesheet'
 fontLink.href =
   'https://fonts.googleapis.com/css2?family=Volkhov:wght@700&family=Poppins:wght@400;500;600;700&display=swap'
 document.head.appendChild(fontLink)
-
-// ── Airplane SVG ──────────────────────────────────────────────────────────────
-function Airplane({ size = 100 }: { size?: number }) {
-  return <img src={airplaneImg} alt="Paper airplane icon" width={size} />
-}
 
 function Squiggle({ width }: { width: number }) {
   return (

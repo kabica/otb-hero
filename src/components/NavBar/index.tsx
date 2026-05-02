@@ -1,7 +1,6 @@
 import * as React from 'react'
 
-import { createTheme, ThemeProvider, useTheme } from '@mui/material/styles'
-import PlayArrowIcon from '@mui/icons-material/PlayArrow'
+import { useTheme } from '@mui/material/styles'
 import MenuIcon from '@mui/icons-material/Menu'
 
 import {
