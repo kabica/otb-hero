@@ -44,16 +44,9 @@ To keep development velocity high while still demonstrating architectural thinki
 
 
 
-## 🌐 Live Demo
+## 🌐 Live Demo 
 
 https://otb-hero.vercel.app
-
-
-
-
-## 💻 Repository
-
-https://github.com/kabica/otb-hero
 
 
 
