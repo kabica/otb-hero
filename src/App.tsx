@@ -1,15 +1,16 @@
 import { ThemeProvider } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
+import { Outlet } from 'react-router-dom'
 
-import Hero from './components/Hero'
-
+import Navbar from './components/Nav'
 import { jadooTheme } from './theme'
 
 function App() {
   return (
     <ThemeProvider theme={jadooTheme}>
       <CssBaseline />
-      <Hero />
+      <Navbar /> {/* Always visible on every page */}
+      <Outlet /> {/* Individual pages will render here */}
     </ThemeProvider>
   )
 }
