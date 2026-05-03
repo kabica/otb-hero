@@ -57,10 +57,10 @@ const Login = () => {
           bgcolor: 'white',
         }}
       >
-        <Typography variant="h4" color="accent" fontWeight={700} textAlign="center" mb={1}>
+        <Typography variant="h4" color="accent" sx={{ fontWeight: 700, mb: 1 }}>
           Welcome Back
         </Typography>
-        <Typography color="text.secondary" textAlign="center" mb={4}>
+        <Typography color="text.secondary" sx={{ mb: 1 }}>
           Sign in to continue to Jadoo
         </Typography>
 
@@ -72,7 +72,6 @@ const Login = () => {
 
         <form onSubmit={handleSubmit(onSubmit)}>
           <TextField
-            color="accent"
             fullWidth
             label="Email Address"
             type="email"
@@ -80,13 +79,17 @@ const Login = () => {
             {...register('email')}
             error={!!errors.email}
             helperText={errors.email?.message}
-            FormHelperTextProps={{
-              sx: { color: 'error.main', fontSize: '0.75rem', mt: 0.5 },
+            slotProps={{
+              formHelperText: {
+                sx: {
+                  color: 'error.main',
+                  fontSize: '0.75rem',
+                  mt: 0.5,
+                },
+              },
             }}
           />
-
           <TextField
-            color="accent"
             fullWidth
             label="Password"
             type="password"
@@ -94,8 +97,14 @@ const Login = () => {
             {...register('password')}
             error={!!errors.password}
             helperText={errors.password?.message}
-            FormHelperTextProps={{
-              sx: { color: 'error.main', fontSize: '0.75rem', mt: 0.5 },
+            slotProps={{
+              formHelperText: {
+                sx: {
+                  color: 'error.main',
+                  fontSize: '0.75rem',
+                  mt: 0.5,
+                },
+              },
             }}
           />
 
