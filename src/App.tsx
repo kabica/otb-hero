@@ -15,7 +15,7 @@ function App() {
           minHeight: '100vh',
           backgroundImage: `url(${decor})`,
           backgroundRepeat: 'no-repeat',
-          backgroundSize: 'cover', // or 'contain'
+          backgroundSize: 'cover',
           backgroundPosition: 'top center',
           overflowX: 'hidden',
         }}

@@ -1,3 +1,5 @@
+// ──────────── Static + External Deps. ────────────
+import * as React from 'react'
 import { Box, Button, Card, CardContent, Chip, LinearProgress, Typography } from '@mui/material'
 import EventAvailableIcon from '@mui/icons-material/EventAvailable'
 import FlightTakeoffIcon from '@mui/icons-material/FlightTakeoff'
@@ -68,7 +70,7 @@ export default function Bookings(): React.ReactElement {
               mt: 4,
               p: { xs: 3, md: 5 },
               borderRadius: 4,
-            //   background: 'rgba(255,255,255,0.75)',
+              //   background: 'rgba(255,255,255,0.75)',
               backdropFilter: 'blur(10px)',
               boxShadow: '0 12px 40px rgba(24,30,75,0.08)',
               textAlign: 'center',

@@ -1,9 +1,11 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
+// ──────────── Static + External Deps. ────────────
+import * as React from 'react'
 import { RouterProvider } from 'react-router-dom'
+import ReactDOM from 'react-dom/client'
 
-import router from './router'
+// ──────────── Context Providers ────────────
 import { AuthProvider } from './context/AuthContext'
+import router from './router'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

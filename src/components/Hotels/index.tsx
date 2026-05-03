@@ -1,3 +1,5 @@
+// ──────────── Static + External Deps. ────────────
+import * as React from 'react'
 import { Box, Button, Card, CardContent, Typography } from '@mui/material'
 import HotelIcon from '@mui/icons-material/Hotel'
 import LocationOnIcon from '@mui/icons-material/LocationOn'

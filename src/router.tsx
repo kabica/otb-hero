@@ -1,14 +1,16 @@
+// ──────────── Static + External Deps. ────────────
 import { createBrowserRouter } from 'react-router-dom'
 
-import App from './App'
-import Home from './components/Home'
-import Login from './components/Login'
-import Signup from './components/Signup'
-import Hotels from './components/Hotels'
-import Flights from './components/Flights'
-import Bookings from './components/Bookings'
+// ──────────── Outlets ────────────
 import Destinations from './components/Destinations'
 import Discover from './components/Discover'
+import Bookings from './components/Bookings'
+import Flights from './components/Flights'
+import Hotels from './components/Hotels'
+import Signup from './components/Signup'
+import Login from './components/Login'
+import Home from './components/Home'
+import App from './App'
 
 const router = createBrowserRouter([
   {
