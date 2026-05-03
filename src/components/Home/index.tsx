@@ -1,11 +1,13 @@
 // ──────────── Static + External Deps. ────────────
 import * as React from 'react'
 
+import CloseIcon from '@mui/icons-material/Close'
 import PlayArrowIcon from '@mui/icons-material/PlayArrow'
-import { Typography, Box, Button } from '@mui/material'
+import { Box, Button, Dialog, IconButton, Typography } from '@mui/material'
+
+import decor from '../../../public/decor.png'
 import squiggle from '../../../public/squiggle.png'
 import travel from '../../../public/travel.png'
-import decor from '../../../public/decor.png'
 
 // ──────────── Custom Components ────────────
 const Squiggle: React.FC = () => {
@@ -40,215 +42,265 @@ const Squiggle: React.FC = () => {
 }
 
 const Hero: React.FC = () => {
+  const [openVideo, setOpenVideo] = React.useState(false)
+
   return (
-    <Box
-      sx={{
-        position: 'relative',
-        minHeight: { xs: 'auto', md: 'calc(100vh - 80px)' },
-        display: 'flex',
-        alignItems: 'center',
-        overflow: 'hidden',
-      }}
-    >
+    <>
       <Box
         sx={{
           position: 'relative',
-          zIndex: 2,
-          width: '100%',
-          display: 'grid',
-          gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' },
+          minHeight: { xs: 'auto', md: 'calc(100vh - 80px)' },
+          display: 'flex',
           alignItems: 'center',
-          gap: { xs: 4, md: 8 }, // Increased gap
-          px: { xs: 3, sm: 5, md: 8, lg: 18 },
-          py: { xs: 6, md: 0 },
+          overflow: 'hidden',
         }}
       >
         <Box
           sx={{
-            order: { xs: 1, md: 1 },
-            pt: { xs: 3, md: 0 },
-            minWidth: 0,
-            maxWidth: '100%',
+            position: 'relative',
+            zIndex: 2,
+            width: '100%',
+            display: 'grid',
+            gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' },
+            alignItems: 'center',
+            gap: { xs: 4, md: 8 },
+            px: { xs: 3, sm: 5, md: 8, lg: 18 },
+            py: { xs: 6, md: 0 },
           }}
         >
           <Box
             sx={{
-              mb: { xs: 2.5, md: 3 },
-              display: 'flex',
-              flexDirection: 'column',
-              gap: { xs: 1.5, md: 2.5 },
-              textAlign: 'left',
-              width: '100%',
+              order: { xs: 1, md: 1 },
+              pt: { xs: 3, md: 0 },
+              minWidth: 0,
+              maxWidth: '100%',
             }}
           >
-            <Typography
-              sx={{
-                fontFamily: `'Poppins', sans-serif`,
-                fontWeight: 700,
-                fontSize: 'clamp(12px, 2vw, 20px)',
-                letterSpacing: { xs: 1, md: 2 },
-                color: '#DF6951',
-                textTransform: 'uppercase',
-                whiteSpace: 'normal',
-                overflowWrap: 'break-word',
-                lineHeight: 1.4,
-              }}
-            >
-              Best Destinations Around The World
-            </Typography>
-
-            <Typography
-              component="h1"
-              sx={{
-                fontFamily: `'Volkhov', serif`,
-                fontWeight: 700,
-                fontSize: 'clamp(40px, 11vw, 84px)',
-                letterSpacing: '-0.04em',
-                lineHeight: 1.05,
-                color: '#181E4B',
-                maxWidth: '100%',
-              }}
-            >
-              Travel,{' '}
-              <Box
-                component="span"
-                sx={{
-                  display: 'inline-flex',
-                  flexDirection: 'column',
-                  alignItems: 'flex-start',
-                  width: 'fit-content',
-                  verticalAlign: 'baseline',
-                }}
-              >
-                enjoy
-                <Squiggle />
-              </Box>
-              <br />
-              and live a new
-              <br />
-              and full life
-            </Typography>
-
-            <Typography
-              sx={{
-                fontFamily: `'Poppins', sans-serif`,
-                fontSize: 'clamp(14px, 2vw, 16px)',
-                color: '#5E6282',
-                lineHeight: 1.7,
-                textAlign: 'left',
-                maxWidth: { xs: '100%', md: '500px' },
-                whiteSpace: 'normal',
-                overflowWrap: 'break-word',
-              }}
-            >
-              Built Wicket longer admire do barton vanity itself do in it. Preferred to sportsmen it
-              engrossed listening. Park gate sell they west hard for the.
-            </Typography>
-
             <Box
               sx={{
+                mb: { xs: 2.5, md: 3 },
                 display: 'flex',
-                flexWrap: 'wrap',
-                alignItems: 'center',
-                gap: { xs: 2, md: 4 },
+                flexDirection: 'column',
+                gap: { xs: 1.5, md: 2.5 },
+                textAlign: 'left',
+                width: '100%',
               }}
             >
-              <Button
-                variant="contained"
-                size="large"
-                href="discover"
+              <Typography
                 sx={{
                   fontFamily: `'Poppins', sans-serif`,
-                  fontWeight: 600,
-                  background: '#F1A501',
-                  color: '#fff',
-                  borderRadius: '10px',
-                  px: { xs: 3.5, md: 4.5 },
-                  py: { xs: 1.3, md: 1.7 },
-                  textTransform: 'none',
-                  boxShadow: '0 10px 28px rgba(241,165,1,0.4)',
-                  '&:hover': {
-                    background: '#d9940a',
-                    boxShadow: '0 12px 32px rgba(241,165,1,0.5)',
-                  },
+                  fontWeight: 700,
+                  fontSize: 'clamp(12px, 2vw, 20px)',
+                  letterSpacing: { xs: 1, md: 2 },
+                  color: '#DF6951',
+                  textTransform: 'uppercase',
+                  whiteSpace: 'normal',
+                  overflowWrap: 'break-word',
+                  lineHeight: 1.4,
                 }}
               >
-                Find out more
-              </Button>
+                Best Destinations Around The World
+              </Typography>
+
+              <Typography
+                component="h1"
+                sx={{
+                  fontFamily: `'Volkhov', serif`,
+                  fontWeight: 700,
+                  fontSize: 'clamp(40px, 11vw, 84px)',
+                  letterSpacing: '-0.04em',
+                  lineHeight: 1.05,
+                  color: '#181E4B',
+                  maxWidth: '100%',
+                }}
+              >
+                Travel,{' '}
+                <Box
+                  component="span"
+                  sx={{
+                    display: 'inline-flex',
+                    flexDirection: 'column',
+                    alignItems: 'flex-start',
+                    width: 'fit-content',
+                    verticalAlign: 'baseline',
+                  }}
+                >
+                  enjoy
+                  <Squiggle />
+                </Box>
+                <br />
+                and live a new
+                <br />
+                and full life
+              </Typography>
+
+              <Typography
+                sx={{
+                  fontFamily: `'Poppins', sans-serif`,
+                  fontSize: 'clamp(14px, 2vw, 16px)',
+                  color: '#5E6282',
+                  lineHeight: 1.7,
+                  textAlign: 'left',
+                  maxWidth: { xs: '100%', md: '500px' },
+                  whiteSpace: 'normal',
+                  overflowWrap: 'break-word',
+                }}
+              >
+                Built Wicket longer admire do barton vanity itself do in it. Preferred to sportsmen
+                it engrossed listening. Park gate sell they west hard for the.
+              </Typography>
 
               <Box
                 sx={{
                   display: 'flex',
+                  flexWrap: 'wrap',
                   alignItems: 'center',
-                  gap: 1.5,
-                  cursor: 'pointer',
-                  '&:hover .play-circle': { transform: 'scale(1.1)' },
+                  gap: { xs: 2, md: 4 },
                 }}
               >
-                <Box
-                  className="play-circle"
-                  sx={{
-                    width: { xs: 46, md: 54 },
-                    height: { xs: 46, md: 54 },
-                    borderRadius: '50%',
-                    background: '#DF6951',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    boxShadow: '0 8px 22px rgba(223,105,81,0.4)',
-                    transition: 'transform 0.2s ease',
-                    flexShrink: 0,
-                  }}
-                >
-                  <PlayArrowIcon
-                    sx={{
-                      color: '#fff',
-                      fontSize: { xs: 22, md: 26 },
-                      ml: '3px',
-                    }}
-                  />
-                </Box>
-
-                <Typography
+                <Button
+                  variant="contained"
+                  size="large"
+                  href="discover"
                   sx={{
                     fontFamily: `'Poppins', sans-serif`,
-                    fontWeight: 500,
-                    fontSize: { xs: '0.9rem', md: '0.95rem' },
-                    color: '#181E4B',
+                    fontWeight: 600,
+                    background: '#F1A501',
+                    color: '#fff',
+                    borderRadius: '10px',
+                    px: { xs: 3.5, md: 4.5 },
+                    py: { xs: 1.3, md: 1.7 },
+                    textTransform: 'none',
+                    boxShadow: '0 10px 28px rgba(241,165,1,0.4)',
+                    '&:hover': {
+                      background: '#d9940a',
+                      boxShadow: '0 12px 32px rgba(241,165,1,0.5)',
+                    },
                   }}
                 >
-                  Play Demo
-                </Typography>
+                  Find out more
+                </Button>
+
+                <Box
+                  onClick={() => setOpenVideo(true)}
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 1.5,
+                    cursor: 'pointer',
+                    '&:hover .play-circle': { transform: 'scale(1.1)' },
+                  }}
+                >
+                  <Box
+                    className="play-circle"
+                    sx={{
+                      width: { xs: 46, md: 54 },
+                      height: { xs: 46, md: 54 },
+                      borderRadius: '50%',
+                      background: '#DF6951',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      boxShadow: '0 8px 22px rgba(223,105,81,0.4)',
+                      transition: 'transform 0.2s ease',
+                      flexShrink: 0,
+                    }}
+                  >
+                    <PlayArrowIcon
+                      sx={{
+                        color: '#fff',
+                        fontSize: { xs: 22, md: 26 },
+                        ml: '3px',
+                      }}
+                    />
+                  </Box>
+
+                  <Typography
+                    sx={{
+                      fontFamily: `'Poppins', sans-serif`,
+                      fontWeight: 500,
+                      fontSize: { xs: '0.9rem', md: '0.95rem' },
+                      color: '#181E4B',
+                    }}
+                  >
+                    Play Demo
+                  </Typography>
+                </Box>
               </Box>
             </Box>
           </Box>
-        </Box>
 
-        {/* Image Section */}
-        <Box
-          sx={{
-            order: { xs: 2, md: 2 },
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            py: { xs: 4, md: 0 },
-            width: '100%',
-          }}
-        >
           <Box
-            component="img"
-            src={travel}
-            alt="Traveller"
             sx={{
-              width: '100%', // Balanced max size
-              objectFit: 'contain',
-              display: 'block',
-              mx: 'auto',
+              order: { xs: 2, md: 2 },
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              py: { xs: 4, md: 0 },
+              width: '100%',
+            }}
+          >
+            <Box
+              component="img"
+              src={travel}
+              alt="Traveller"
+              sx={{
+                width: '100%',
+                objectFit: 'contain',
+                display: 'block',
+                mx: 'auto',
+              }}
+            />
+          </Box>
+        </Box>
+      </Box>
+
+      <Dialog
+        open={openVideo}
+        onClose={() => setOpenVideo(false)}
+        maxWidth="md"
+        fullWidth
+        slotProps={{
+          paper: {
+            sx: {
+              borderRadius: 4,
+              overflow: 'hidden',
+              bgcolor: 'black',
+            },
+          },
+        }}
+      >
+        <Box sx={{ position: 'relative', pt: '56.25%' }}>
+          <IconButton
+            onClick={() => setOpenVideo(false)}
+            sx={{
+              position: 'absolute',
+              top: 8,
+              right: 8,
+              zIndex: 2,
+              color: 'white',
+            }}
+          >
+            <CloseIcon />
+          </IconButton>
+
+          <Box
+            component="iframe"
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
+            title="Jadoo demo video"
+            allow="autoplay; encrypted-media; picture-in-picture"
+            allowFullScreen
+            sx={{
+              position: 'absolute',
+              inset: 0,
+              width: '100%',
+              height: '100%',
+              border: 0,
             }}
           />
         </Box>
-      </Box>
-    </Box>
+      </Dialog>
+    </>
   )
 }
 
@@ -264,7 +316,6 @@ export default function Jadoo(): React.ReactElement {
         backgroundPosition: 'center',
       }}
     >
-      {/* <Navbar /> */}
       <Hero />
     </Box>
   )
