@@ -1,31 +1,37 @@
 // ──────────── Static + Imports ────────────
-import { createTheme } from '@mui/material/styles';
+import { createTheme } from '@mui/material/styles'
 
 // ──────────── Custom Palette  ────────────
 declare module '@mui/material/styles' {
   interface Palette {
-    accent: Palette['primary'];
+    accent: Palette['primary']
   }
 
   interface PaletteOptions {
-    accent?: PaletteOptions['primary'];
+    accent?: PaletteOptions['primary']
   }
 
   interface TypographyVariants {
-    creative: React.CSSProperties;
-    developer: React.CSSProperties;
+    creative: React.CSSProperties
+    developer: React.CSSProperties
   }
 
   interface TypographyVariantsOptions {
-    creative?: React.CSSProperties;
-    developer?: React.CSSProperties;
+    creative?: React.CSSProperties
+    developer?: React.CSSProperties
+  }
+}
+
+declare module '@mui/material/Button' {
+  interface ButtonPropsColorOverrides {
+    accent: true
   }
 }
 
 declare module '@mui/material/Typography' {
   interface TypographyPropsVariantOverrides {
-    creative: true;
-    developer: true;
+    creative: true
+    developer: true
   }
 }
 
@@ -91,13 +97,14 @@ export const lightTheme = createTheme({
       },
     },
   },
-});
+})
 
 // ──────────── Jadoo Theme ────────────
 export const jadooTheme = createTheme({
   palette: {
     primary: { main: '#181E4B' },
     secondary: { main: '#F1A501' },
+    accent: { main: '#ff7b00' },
     text: {
       primary: '#181E4B',
       secondary: '#5E6282',
@@ -111,5 +118,14 @@ export const jadooTheme = createTheme({
     MuiAppBar: {
       styleOverrides: { root: { boxShadow: 'none' } },
     },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          textTransform: 'none',
+          borderRadius: '8px',
+          fontWeight: 600,
+        },
+      },
+    },
   },
-});
+})
