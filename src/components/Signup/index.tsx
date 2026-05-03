@@ -3,6 +3,8 @@ import * as React from 'react'
 
 import { Alert, Box, Button, TextField, Typography } from '@mui/material'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { useAuth } from '../../context/AuthContext'
+import { useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 
@@ -33,6 +35,8 @@ const helperTextSx = {
 
 const Signup = () => {
   const [submitError, setSubmitError] = React.useState('')
+  const navigate = useNavigate()
+  const { signup } = useAuth()
 
   const {
     register,
@@ -43,17 +47,24 @@ const Signup = () => {
     mode: 'onBlur',
   })
 
-  const onSubmit = async (data: SignupForm) => {
-    setSubmitError('')
+  const onSubmit = React.useCallback(
+    async (data: SignupForm) => {
+      setSubmitError('')
 
-    try {
-      console.log('Signup attempt:', data)
-      // TODO: Add your API call here
-    } catch (err) {
-      console.log({ err })
-      setSubmitError('Something went wrong. Please try again.')
-    }
-  }
+      try {
+        await new Promise((resolve) => setTimeout(resolve, 1000))
+
+        console.log('Login attempt:', data)
+
+        signup()
+        navigate('/')
+      } catch (err) {
+        console.log({ err })
+        setSubmitError('Invalid email or password')
+      }
+    },
+    [signup, navigate]
+  )
 
   return (
     <Box
@@ -61,7 +72,6 @@ const Signup = () => {
         display: 'flex',
         justifyContent: 'center',
         px: 2,
-        bgcolor: 'background.default',
       }}
     >
       <Box
@@ -72,7 +82,6 @@ const Signup = () => {
           p: 4,
           borderRadius: 3,
           boxShadow: 3,
-          bgcolor: 'white',
         }}
       >
         <Typography variant="h4" color="accent" sx={{ fontWeight: 700, mb: 1 }}>

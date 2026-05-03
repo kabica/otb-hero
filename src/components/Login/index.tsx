@@ -3,6 +3,8 @@ import * as React from 'react'
 
 import { Box, TextField, Button, Typography, Alert } from '@mui/material'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { useAuth } from '../../context/AuthContext'
+import { useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 
@@ -18,6 +20,8 @@ type LoginForm = z.infer<typeof loginSchema>
 
 const Login = () => {
   const [submitError, setSubmitError] = React.useState('')
+  const navigate = useNavigate()
+  const { login } = useAuth()
 
   const {
     register,
@@ -28,16 +32,24 @@ const Login = () => {
     mode: 'onBlur', // Show errors when user leaves the field
   })
 
-  const onSubmit = async (data: LoginForm) => {
-    setSubmitError('')
-    try {
-      console.log('Login attempt:', data)
-      // TODO: Add your API call here
-    } catch (err) {
-      console.log({ err })
-      setSubmitError('Invalid email or password')
-    }
-  }
+  const onSubmit = React.useCallback(
+    async (data: LoginForm) => {
+      setSubmitError('')
+
+      try {
+        await new Promise((resolve) => setTimeout(resolve, 1000))
+
+        console.log('Login attempt:', data)
+
+        login()
+        navigate('/')
+      } catch (err) {
+        console.log({ err })
+        setSubmitError('Invalid email or password')
+      }
+    },
+    [login, navigate]
+  )
 
   return (
     <Box
