@@ -1,8 +1,8 @@
+// ──────────── Static + Imports ────────────
 import * as React from 'react'
 
 import { useTheme } from '@mui/material/styles'
-import MenuIcon from '@mui/icons-material/Menu'
-
+import logo from '../../../public/logo.png'
 import {
   AppBar,
   Toolbar,
@@ -16,14 +16,16 @@ import {
   ListItem,
   ListItemText,
   useMediaQuery,
+  ListItemIcon,
 } from '@mui/material'
-
-const navItems = [
-  { label: 'Destinations', href: '#destinations' },
-  { label: 'Hotels', href: '#hotels' },
-  { label: 'Flights', href: '#flights' },
-  { label: 'Bookings', href: '#bookings' },
-]
+import {
+  Menu,
+  FlightTakeoff,
+  SingleBed,
+  CalendarToday,
+  FmdGoodOutlined,
+  LockOutlined,
+} from '@mui/icons-material'
 
 // ──────────── Navbar Component ────────────
 export default function Navbar(): React.ReactElement {
@@ -41,63 +43,79 @@ export default function Navbar(): React.ReactElement {
     whiteSpace: 'nowrap',
   }
 
+  const navItems = React.useMemo(() => {
+    return [
+      { label: 'Destinations', href: 'destinations', icon: <FmdGoodOutlined /> },
+      { label: 'Hotels', href: 'hotels', icon: <SingleBed /> },
+      { label: 'Flights', href: 'flights', icon: <FlightTakeoff /> },
+      { label: 'Bookings', href: 'bookings', icon: <CalendarToday /> },
+      { label: 'Login', href: 'login', icon: <LockOutlined /> },
+    ]
+  }, [])
+
   return (
     <AppBar position="static" sx={{ background: 'transparent', color: 'text.primary' }}>
       <Toolbar
         sx={{
           justifyContent: 'space-between',
-          px: { xs: 3, sm: 5, md: 8, lg: 12 },
+          px: { xs: 3, sm: 5, md: 8, lg: 18 },
           py: { xs: 1.5, md: 2.5 },
           minHeight: { xs: 64, md: 80 },
         }}
       >
         {/* Logo */}
-        <Typography
+        <Box
+          component="img"
+          src={logo}
+          alt="Jadoo"
           sx={{
-            fontFamily: `'Poppins', sans-serif`,
-            fontWeight: 700,
-            fontSize: { xs: '1.6rem', md: '1.9rem' },
-            color: '#181E4B',
-            letterSpacing: '-0.5px',
-            userSelect: 'none',
-            lineHeight: 1,
+            height: 'clamp(28px, 5vw, 42px)', // Slightly bigger logo
+            cursor: 'pointer',
+            width: 'auto',
           }}
-        >
-          Jad
-          <Box component="span" sx={{ color: '#F1A501' }}>
-            oo
-          </Box>
-        </Typography>
+        />
 
         {/* Desktop nav */}
         {!isMobile && (
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: { md: 3.5, lg: 5 } }}>
+          <Box
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: { xs: 1.5, sm: 2.5, md: 3.5, lg: 6, xl: 10 },
+              flexWrap: 'nowrap',
+            }}
+          >
             {navItems.map((item) => (
               <Link key={item.label} href={item.href} underline="none" sx={linkSx}>
                 {item.label}
               </Link>
             ))}
-            <Link href="#login" underline="none" sx={linkSx}>
-              Login
-            </Link>
+
             <Button
               variant="outlined"
-              href="#signup"
+              href="signup"
               sx={{
                 fontFamily: `'Poppins', sans-serif`,
                 fontWeight: 600,
-                fontSize: '0.9rem',
+                fontSize: { xs: '0.85rem', md: '0.9rem' },
                 color: '#181E4B',
                 borderColor: '#181E4B',
                 borderRadius: '8px',
-                px: 2.5,
-                py: 0.7,
+                px: { xs: 2.5, md: 3 },
+                py: { xs: 0.7, md: 0.85 },
                 textTransform: 'none',
-                '&:hover': { borderColor: '#F1A501', color: '#F1A501', background: 'transparent' },
+                whiteSpace: 'nowrap',
+                flexShrink: 1,
+                '&:hover': {
+                  borderColor: '#F1A501',
+                  color: '#F1A501',
+                  background: 'transparent',
+                },
               }}
             >
               Sign up
             </Button>
+
             <Typography sx={{ ...linkSx, cursor: 'pointer' }}>EN ▾</Typography>
           </Box>
         )}
@@ -105,7 +123,7 @@ export default function Navbar(): React.ReactElement {
         {/* Mobile hamburger */}
         {isMobile && (
           <IconButton onClick={() => setDrawerOpen(true)} sx={{ color: '#181E4B' }}>
-            <MenuIcon />
+            <Menu />
           </IconButton>
         )}
       </Toolbar>
@@ -114,11 +132,7 @@ export default function Navbar(): React.ReactElement {
       <Drawer anchor="right" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
         <Box sx={{ width: 240, pt: 4 }}>
           <List>
-            {[
-              ...navItems,
-              { label: 'Login', href: '#login' },
-              { label: 'Sign up', href: '#signup' },
-            ].map((item) => (
+            {[...navItems].map((item) => (
               <ListItem
                 key={item.label}
                 component="a"
@@ -126,6 +140,7 @@ export default function Navbar(): React.ReactElement {
                 onClick={() => setDrawerOpen(false)}
                 sx={{ py: 1.2 }}
               >
+                <ListItemIcon>{item.icon}</ListItemIcon>
                 <ListItemText
                   primary={item.label}
                   sx={{
@@ -136,6 +151,11 @@ export default function Navbar(): React.ReactElement {
                 />
               </ListItem>
             ))}
+            <ListItem sx={{ py: 1.2 }}>
+              <Button fullWidth variant="outlined" color="accent" href="signup">
+                Signup
+              </Button>
+            </ListItem>
           </List>
         </Box>
       </Drawer>

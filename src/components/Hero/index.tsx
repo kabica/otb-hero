@@ -1,38 +1,41 @@
-// ──────────── Static + Imports ────────────
+// ──────────── Static + External Deps. ────────────
 import * as React from 'react'
 
-import { Typography, Box, Button } from '@mui/material'
 import PlayArrowIcon from '@mui/icons-material/PlayArrow'
+import { Typography, Box, Button } from '@mui/material'
+import squiggle from '../../../public/squiggle.png'
+import travel from '../../../public/travel.png'
+import decor from '../../../public/decor.png'
 
 // ──────────── Custom Components ────────────
-import travel from '../../../public/travel.png'
 import Navbar from '../Nav'
-
-const fontLink = document.createElement('link')
-fontLink.rel = 'stylesheet'
-fontLink.href =
-  'https://fonts.googleapis.com/css2?family=Volkhov:wght@700&family=Poppins:wght@400;500;600;700&display=swap'
-document.head.appendChild(fontLink)
 
 const Squiggle: React.FC = () => {
   return (
     <Box
-      component="svg"
-      viewBox="0 0 120 14"
-      preserveAspectRatio="none"
+      component="span"
       sx={{
-        display: 'block',
-        width: '2.35em',
-        height: '0.22em',
-        mt: '-0.08em',
+        display: 'inline-flex',
+        flexDirection: 'column',
+        alignItems: 'flex-start',
+        width: 'fit-content',
+        whiteSpace: 'nowrap',
       }}
     >
-      <path
-        d="M2 10 Q18 2 36 10 Q54 18 72 10 Q90 2 108 10 Q114 12 118 9"
-        stroke="#DF6951"
-        strokeWidth="4"
-        fill="none"
-        strokeLinecap="round"
+      <Box
+        component="img"
+        src={squiggle}
+        alt=""
+        aria-hidden="true"
+        sx={{
+          width: '4.25em',
+          height: 'auto',
+          maxHeight: '12px',
+          mt: '-0.2em',
+          ml: '-0.4em',
+          display: 'block',
+          zIndex: -1,
+        }}
       />
     </Box>
   )
@@ -51,29 +54,15 @@ const Hero: React.FC = () => {
     >
       <Box
         sx={{
-          position: 'absolute',
-          top: 0,
-          right: 0,
-          width: { xs: '100%', md: '52%' },
-          height: { xs: '42%', md: '100%' },
-          background: '#F5EFE6',
-          borderRadius: { xs: '0 0 55% 55%', md: '50% 0 0 50%' },
-          zIndex: 0,
-        }}
-      />
-
-      <Box
-        sx={{
           position: 'relative',
           zIndex: 2,
           width: '100%',
           display: 'grid',
           gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' },
           alignItems: 'center',
-          px: { xs: 3, sm: 5, md: 8, lg: 12 },
-          py: { xs: 5, md: 0 },
-          gap: { xs: 0, md: 2 },
-          overflow: 'hidden',
+          gap: { xs: 4, md: 8 }, // Increased gap
+          px: { xs: 3, sm: 5, md: 8, lg: 18 },
+          py: { xs: 6, md: 0 },
         }}
       >
         <Box
@@ -91,8 +80,7 @@ const Hero: React.FC = () => {
               flexDirection: 'column',
               gap: { xs: 1.5, md: 2.5 },
               textAlign: 'left',
-              minWidth: 0,
-              maxWidth: '100%',
+              width: '100%',
             }}
           >
             <Typography
@@ -170,6 +158,7 @@ const Hero: React.FC = () => {
               <Button
                 variant="contained"
                 size="large"
+                href="discover"
                 sx={{
                   fontFamily: `'Poppins', sans-serif`,
                   fontWeight: 600,
@@ -237,15 +226,15 @@ const Hero: React.FC = () => {
           </Box>
         </Box>
 
+        {/* Image Section */}
         <Box
           sx={{
             order: { xs: 2, md: 2 },
             display: 'flex',
             justifyContent: 'center',
-            alignItems: 'flex-end',
-            py: { xs: 3, md: 0 },
-            minWidth: 0,
-            maxWidth: '100%',
+            alignItems: 'center',
+            py: { xs: 4, md: 0 },
+            width: '100%',
           }}
         >
           <Box
@@ -253,11 +242,10 @@ const Hero: React.FC = () => {
             src={travel}
             alt="Traveller"
             sx={{
-              width: 'clamp(260px, 70vw, 540px)',
-              maxWidth: '100%',
-              height: 'auto',
+              width: '100%', // Balanced max size
               objectFit: 'contain',
               display: 'block',
+              mx: 'auto',
             }}
           />
         </Box>
@@ -268,7 +256,16 @@ const Hero: React.FC = () => {
 
 export default function Jadoo(): React.ReactElement {
   return (
-    <Box sx={{ minHeight: '100vh', bgcolor: '#fff', overflowX: 'hidden' }}>
+    <Box
+      sx={{
+        minHeight: '100vh',
+        overflowX: 'hidden',
+        backgroundImage: `url(${decor})`,
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    >
       <Navbar />
       <Hero />
     </Box>
