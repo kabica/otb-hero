@@ -8,9 +8,9 @@ The goal was to build something that felt closer to a real product experience th
 
 
 
-## 🏗 Engineering Focus
+## 🏗 Engineering + Archtecture Considerations
 
-While the assignment centered around UI implementation, I intentionally expanded the project to demonstrate additional frontend engineering capabilities:
+Expanded the project to demonstrate additional frontend engineering capabilities:
 
 - scalable component structure
 - reusable UI patterns
@@ -22,12 +22,10 @@ While the assignment centered around UI implementation, I intentionally expanded
 
 
 
-
 ## Architecture Considerations
 
-For this take-home, I intentionally avoided designing a deeply normalized data model between flights, hotels, destinations, and bookings.
-
-In a production environment, these entities would likely require more complex relational modeling:
+Intentionally avoided designing a deeply normalized data model between flights, hotels, destinations, and bookings.
+In a production environment, these entities would  require more complex relational modeling:
 
 - bookings ↔ flights  
 - bookings ↔ hotels  
