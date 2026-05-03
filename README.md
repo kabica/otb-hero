@@ -6,7 +6,22 @@ The original assignment focused on recreating a responsive hero section from a p
 
 The goal was to build something that felt closer to a real product experience than a static UI exercise.
 
----
+
+
+## 🏗 Engineering Focus
+
+While the assignment centered around UI implementation, I intentionally expanded the project to demonstrate additional frontend engineering capabilities:
+
+- scalable component structure
+- reusable UI patterns
+- route architecture
+- state management
+- responsive design systems
+- authentication state handling
+- product-focused UX decisions
+
+
+
 
 ## Architecture Considerations
 
@@ -26,19 +41,22 @@ Given the scope of the assignment, I prioritized frontend architecture, responsi
 
 To keep development velocity high while still demonstrating architectural thinking, I used lightweight mock data structures that can be easily replaced by real API integrations in a production implementation.
 
----
+
+
 
 ## 🌐 Live Demo
 
 https://otb-hero.vercel.app
 
----
+
+
 
 ## 💻 Repository
 
 https://github.com/kabica/otb-hero
 
----
+
+
 
 ## ✨ What I Built
 
@@ -73,7 +91,8 @@ https://github.com/kabica/otb-hero
 - Flights
 - Booking dashboard
 
----
+
+
 
 # ⚙️ Technical Stack
 
@@ -86,21 +105,8 @@ https://github.com/kabica/otb-hero
 ✅ **Zod** → schema validation  
 ▲ **Vercel** → deployment + hosting  
 
----
 
-## 🏗 Engineering Focus
 
-While the assignment centered around UI implementation, I intentionally expanded the project to demonstrate additional frontend engineering capabilities:
-
-- scalable component structure
-- reusable UI patterns
-- route architecture
-- state management
-- responsive design systems
-- authentication state handling
-- product-focused UX decisions
-
----
 
 ## 🚀 Running Locally
 
