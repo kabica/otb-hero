@@ -286,7 +286,7 @@ const Hero: React.FC = () => {
 
           <Box
             component="iframe"
-            src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
+            src="https://www.youtube.com/embed/bpEYKYzJNTg?start=27&autoplay=1"
             title="Jadoo demo video"
             allow="autoplay; encrypted-media; picture-in-picture"
             allowFullScreen
