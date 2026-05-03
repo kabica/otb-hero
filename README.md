@@ -1,49 +1,22 @@
 # Jadoo ✈︎
 
-A fully responsive travel experience built for the **Outside The Box** frontend take-home exercise
+A fully responsive travel experience built for the **Outside The Box** frontend take-home exercise.
 
-The original assignment focused on recreating a responsive hero section from a provided design reference. This has been expanded to showcase a lightweight multi-page travel application to with stronger frontend architecture, interaction design, state management, and product thinking.
+The original assignment focused on recreating a responsive hero section from a provided design reference. After completing the required hero implementation, I expanded the project into a small product experience that demonstrates responsive UI engineering, state management, routing architecture, and product-focused UX decisions.
 
+---
 
-
-
-## Engineering Considerations
-
-Expanded the project to demonstrate additional frontend engineering capabilities:
-
-- scalable component structure
-- reusable UI patterns
-- route architecture
-- state management
-- responsive design systems
-- authentication state handling
-- product-focused UX decisions
-
-
-
-## Architecture Considerations
-
-Intentionally avoided designing a deeply normalized data model between flights, hotels, destinations, and bookings.
-In a production environment, these entities would  require more complex relational modeling:
-
-- bookings ↔ flights  
-- bookings ↔ hotels  
-- users ↔ bookings  
-- destinations ↔ inventory  
-- payment + reservation state management  
-
-That would introduce additional concerns around relational consistency, API orchestration, caching strategies, and persistence layers.
-
-Given the scope, I prioritized frontend architecture, responsiveness, interaction design, and user experience over building unnecessary backend abstractions or overly complex mock schemas. These can be readily switched to external / structured data sources with further composition logic required for use in frontend. 
-
-
-
-## 🌐 Live Demo 
+## 🌐 Live Demo
 
 https://otb-hero.vercel.app
 
+---
 
+## 💻 Repository
 
+https://github.com/kabica/otb-hero
+
+---
 
 ## ✨ What I Built
 
@@ -78,8 +51,7 @@ https://otb-hero.vercel.app
 - Flights
 - Booking dashboard
 
-
-
+---
 
 # ⚙️ Technical Stack
 
@@ -92,8 +64,48 @@ https://otb-hero.vercel.app
 ✅ **Zod** → schema validation  
 ▲ **Vercel** → deployment + hosting  
 
+---
 
+## 🏗 Engineering Focus
 
+While the assignment centered around UI implementation, I intentionally expanded the project to demonstrate additional frontend engineering capabilities:
+
+- scalable component architecture
+- reusable UI patterns
+- route design
+- state management
+- responsive design systems
+- authentication state handling
+- product-focused UX decisions
+
+---
+
+## 🧠 Architecture Tradeoffs
+
+For this take-home, I intentionally avoided designing a deeply normalized data model between flights, hotels, destinations, and bookings.
+
+A production implementation would likely require significantly more complex relationships such as:
+
+- users ↔ bookings  
+- bookings ↔ flights  
+- bookings ↔ hotels  
+- destinations ↔ inventory  
+- reservation state ↔ payment state  
+
+That introduces additional complexity around:
+
+- relational consistency  
+- backend orchestration  
+- caching strategies  
+- persistence layers  
+- cancellation/refund workflows  
+- third-party travel API integrations  
+
+Given the scope of the assignment, I intentionally prioritized frontend architecture, responsiveness, state management, and product UX over building unnecessary backend abstractions.
+
+To keep iteration speed high while maintaining flexibility, I used lightweight mock data structures that can be easily replaced by real APIs or persistent services in a production implementation.
+
+---
 
 ## 🚀 Running Locally
 
