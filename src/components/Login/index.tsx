@@ -1,8 +1,10 @@
+// ──────────── Static + Imports ────────────
+import * as React from 'react'
+
+import { Box, TextField, Button, Typography, Alert } from '@mui/material'
+import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { Box, TextField, Button, Typography, Alert } from '@mui/material'
-import { useState } from 'react'
 
 const loginSchema = z.object({
   email: z.string().min(1, 'Email is required').email('Please enter a valid email address'),
@@ -15,7 +17,7 @@ const loginSchema = z.object({
 type LoginForm = z.infer<typeof loginSchema>
 
 const Login = () => {
-  const [submitError, setSubmitError] = useState('')
+  const [submitError, setSubmitError] = React.useState('')
 
   const {
     register,
@@ -40,21 +42,18 @@ const Login = () => {
   return (
     <Box
       sx={{
-        minHeight: '100vh',
         display: 'flex',
-        alignItems: 'center',
         justifyContent: 'center',
-        bgcolor: '#f8f9fa',
       }}
     >
       <Box
         sx={{
-          maxWidth: 420,
+          maxWidth: 500,
+          mt: 8,
           width: '100%',
           p: 4,
           borderRadius: 3,
           boxShadow: 3,
-          bgcolor: 'white',
         }}
       >
         <Typography variant="h4" color="accent" sx={{ fontWeight: 700, mb: 1 }}>
@@ -115,7 +114,7 @@ const Login = () => {
             variant="outlined"
             size="large"
             disabled={isSubmitting}
-            sx={{ mt: 3, py: 1.5, fontWeight: 600 }}
+            sx={{ mt: 8, py: 1.5, fontWeight: 600 }}
           >
             {isSubmitting ? 'Signing in...' : 'Sign In'}
           </Button>

@@ -1,8 +1,10 @@
-import { useState } from 'react'
+// ──────────── Static + Imports ────────────
+import * as React from 'react'
+
+import { Alert, Box, Button, TextField, Typography } from '@mui/material'
+import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { Alert, Box, Button, TextField, Typography } from '@mui/material'
 
 const signupSchema = z
   .object({
@@ -30,7 +32,7 @@ const helperTextSx = {
 }
 
 const Signup = () => {
-  const [submitError, setSubmitError] = useState('')
+  const [submitError, setSubmitError] = React.useState('')
 
   const {
     register,
@@ -56,9 +58,7 @@ const Signup = () => {
   return (
     <Box
       sx={{
-        minHeight: '100vh',
         display: 'flex',
-        alignItems: 'center',
         justifyContent: 'center',
         px: 2,
         bgcolor: 'background.default',
@@ -66,12 +66,13 @@ const Signup = () => {
     >
       <Box
         sx={{
-          maxWidth: 440,
+          maxWidth: 500,
+          mt: 8,
           width: '100%',
           p: 4,
           borderRadius: 3,
           boxShadow: 3,
-          bgcolor: 'background.paper',
+          bgcolor: 'white',
         }}
       >
         <Typography variant="h4" color="accent" sx={{ fontWeight: 700, mb: 1 }}>
@@ -139,7 +140,7 @@ const Signup = () => {
             variant="outlined"
             size="large"
             disabled={isSubmitting}
-            sx={{ mt: 3, py: 1.5, fontWeight: 600 }}
+            sx={{ mt: 8, py: 1.5, fontWeight: 600 }}
           >
             {isSubmitting ? 'Creating account...' : 'Sign Up'}
           </Button>
