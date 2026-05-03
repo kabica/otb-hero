@@ -8,8 +8,6 @@ import travel from '../../../public/travel.png'
 import decor from '../../../public/decor.png'
 
 // ──────────── Custom Components ────────────
-import Navbar from '../Nav'
-
 const Squiggle: React.FC = () => {
   return (
     <Box
@@ -266,7 +264,7 @@ export default function Jadoo(): React.ReactElement {
         backgroundPosition: 'center',
       }}
     >
-      <Navbar />
+      {/* <Navbar /> */}
       <Hero />
     </Box>
   )
