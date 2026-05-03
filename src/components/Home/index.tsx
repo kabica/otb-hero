@@ -1,15 +1,12 @@
 // ──────────── Static + External Deps. ────────────
 import * as React from 'react'
-
-import CloseIcon from '@mui/icons-material/Close'
-import PlayArrowIcon from '@mui/icons-material/PlayArrow'
 import { Box, Button, Dialog, IconButton, Typography } from '@mui/material'
-
-import decor from '../../../public/decor.png'
+import PlayArrowIcon from '@mui/icons-material/PlayArrow'
 import squiggle from '../../../public/squiggle.png'
+import CloseIcon from '@mui/icons-material/Close'
 import travel from '../../../public/travel.png'
+import decor from '../../../public/decor.png'
 
-// ──────────── Custom Components ────────────
 const Squiggle: React.FC = () => {
   return (
     <Box

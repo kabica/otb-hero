@@ -1,11 +1,10 @@
 // ──────────── Static + Imports ────────────
 import * as React from 'react'
-
+import { useAuth } from '../../context/AuthContext'
 import { useTheme } from '@mui/material/styles'
+import { useNavigate } from 'react-router-dom'
 import logo from '../../../public/logo.png'
 import { Link } from 'react-router-dom'
-import { useAuth } from '../../context/AuthContext'
-import { useNavigate } from 'react-router-dom'
 
 import {
   AppBar,

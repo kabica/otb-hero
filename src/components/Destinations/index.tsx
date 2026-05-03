@@ -1,5 +1,6 @@
+// ──────────── Static + External Deps. ────────────
+import * as React from 'react'
 import { Box, Button, Card, CardContent, CardMedia, Chip, Typography } from '@mui/material'
-
 import LocationOnIcon from '@mui/icons-material/LocationOn'
 import StarIcon from '@mui/icons-material/Star'
 import TrendingUpIcon from '@mui/icons-material/TrendingUp'

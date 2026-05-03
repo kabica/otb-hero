@@ -1,3 +1,4 @@
+// ──────────── Static + External Deps. ────────────
 import * as React from 'react'
 
 type AuthContextType = {

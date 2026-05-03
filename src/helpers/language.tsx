@@ -1,3 +1,4 @@
+// ──────────── Static + External Deps. ────────────
 import * as React from 'react'
 import { Typography, Menu, MenuItem, Box } from '@mui/material'
 import ReactCountryFlag from 'react-country-flag'
