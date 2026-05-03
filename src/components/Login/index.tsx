@@ -44,6 +44,7 @@ const Login = () => {
       sx={{
         display: 'flex',
         justifyContent: 'center',
+        px: 2,
       }}
     >
       <Box
