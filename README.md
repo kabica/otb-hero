@@ -1,10 +1,9 @@
 # Jadoo ✈︎
 
-A fully responsive travel experience built for the **Outside The Box** frontend take-home exercise.
+A fully responsive travel experience built for the **Outside The Box** frontend take-home exercise
 
-The original assignment focused on recreating a responsive hero section from a provided design reference. After completing the required hero implementation, I expanded the project into a lightweight multi-page travel application to demonstrate stronger frontend architecture, interaction design, state management, and product thinking.
+The original assignment focused on recreating a responsive hero section from a provided design reference. This has been expanded to showcase a lightweight multi-page travel application to with stronger frontend architecture, interaction design, state management, and product thinking.
 
-The goal was to build something that felt closer to a real product experience than a static UI exercise.
 
 
 
@@ -35,10 +34,7 @@ In a production environment, these entities would  require more complex relation
 
 That would introduce additional concerns around relational consistency, API orchestration, caching strategies, and persistence layers.
 
-Given the scope of the assignment, I prioritized frontend architecture, responsiveness, interaction design, and user experience over building unnecessary backend abstractions or overly complex mock schemas.
-
-To keep development velocity high while still demonstrating architectural thinking, I used lightweight mock data structures that can be easily replaced by real API integrations in a production implementation.
-
+Given the scope, I prioritized frontend architecture, responsiveness, interaction design, and user experience over building unnecessary backend abstractions or overly complex mock schemas. These can be readily switched to external / structured data sources with further composition logic required for use in frontend. 
 
 
 
