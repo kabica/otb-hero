@@ -1,73 +1,69 @@
-# React + TypeScript + Vite
+# ✈️ Jadoo Travel Experience
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A polished, fully responsive travel experience built as part of the **Outside The Box** frontend take-home exercise.
 
-Currently, two official plugins are available:
+Originally, the assignment required recreating a responsive hero section from a provided mockup. I completed that requirement and expanded the project into a cohesive travel product experience to showcase product thinking, frontend architecture, and UI polish.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🌐 Live Demo
+🔗 https://otb-hero.vercel.app
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 💻 Repository
+🔗 https://github.com/kabica/otb-hero
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## ✨ Features
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 🎯 Responsive Hero Section
+- Fully responsive implementation based on provided mockup
+- Mobile navigation drawer
+- Custom typography styling
+- Background layering
+- Responsive imagery
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### 🎬 Interactive UI
+- Play demo video modal
+- Hover interactions
+- Responsive navbar behavior
+- Smooth conditional rendering
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### 🔐 Authentication Flow
+- Login page
+- Signup page
+- Auth context
+- Simulated login/logout
+- Dynamic navbar state updates
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 🌍 Product Pages
+- Destinations
+- Hotels
+- Flights
+- Bookings dashboard
+- Unauthenticated booking state
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🛠 Tech Stack
+
+| Technology | Usage |
+|------------|---------|
+| ⚛️ React | UI framework |
+| 🔷 TypeScript | Type safety |
+| ⚡ Vite | Build tooling |
+| 🎨 Material UI | Component library |
+| 🧭 React Router | Routing |
+| 📝 React Hook Form | Forms |
+| ✅ Zod | Validation |
+| ▲ Vercel | Deployment |
+
+---
+
+## 🚀 Run Locally
+
+```bash
+git clone https://github.com/kabica/otb-hero.git
+cd otb-hero
+npm install
+npm run dev
