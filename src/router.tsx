@@ -8,6 +8,7 @@ import Hotels from './components/Hotels'
 import Flights from './components/Flights'
 import Bookings from './components/Bookings'
 import Destinations from './components/Destinations'
+import Discover from './components/Discover'
 
 const router = createBrowserRouter([
   {
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
       {
         path: 'destinations',
         element: <Destinations />,
+      },
+      {
+        path: 'discover',
+        element: <Discover />,
       },
       {
         path: '*', // Catch all other paths
