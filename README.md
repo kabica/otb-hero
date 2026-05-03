@@ -8,6 +8,26 @@ The goal was to build something that felt closer to a real product experience th
 
 ---
 
+## Architecture Considerations
+
+For this take-home, I intentionally avoided designing a deeply normalized data model between flights, hotels, destinations, and bookings.
+
+In a production environment, these entities would likely require more complex relational modeling:
+
+- bookings ↔ flights  
+- bookings ↔ hotels  
+- users ↔ bookings  
+- destinations ↔ inventory  
+- payment + reservation state management  
+
+That would introduce additional concerns around relational consistency, API orchestration, caching strategies, and persistence layers.
+
+Given the scope of the assignment, I prioritized frontend architecture, responsiveness, interaction design, and user experience over building unnecessary backend abstractions or overly complex mock schemas.
+
+To keep development velocity high while still demonstrating architectural thinking, I used lightweight mock data structures that can be easily replaced by real API integrations in a production implementation.
+
+---
+
 ## 🌐 Live Demo
 
 https://otb-hero.vercel.app
