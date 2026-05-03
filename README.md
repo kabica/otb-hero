@@ -7,7 +7,7 @@ The original assignment focused on recreating a responsive hero section from a p
 
 
 
-## 🏗 Engineering + Archtecture Considerations
+## Engineering Considerations
 
 Expanded the project to demonstrate additional frontend engineering capabilities:
 
